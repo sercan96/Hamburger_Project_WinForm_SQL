@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_HamburgerProject", "OOP_3_Interface\OOP_HamburgerProject.csproj", "{EAD1015D-D831-478B-9893-D5071BEFD9E6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkProject", "HomeworkProject\HomeworkProject.csproj", "{10A836BD-F6EE-430E-B1A4-000C57C17D64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_HamburgerProject", "OOP_HamburgerProject.csproj", "{EAD1015D-D831-478B-9893-D5071BEFD9E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,15 +15,11 @@ Global
 		{EAD1015D-D831-478B-9893-D5071BEFD9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAD1015D-D831-478B-9893-D5071BEFD9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAD1015D-D831-478B-9893-D5071BEFD9E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10A836BD-F6EE-430E-B1A4-000C57C17D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10A836BD-F6EE-430E-B1A4-000C57C17D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10A836BD-F6EE-430E-B1A4-000C57C17D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10A836BD-F6EE-430E-B1A4-000C57C17D64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1B4A418C-ACEB-4DAE-99F6-D1FE00EF583C}
+		SolutionGuid = {E2F55CCA-3386-4552-8DC6-61F42C25254C}
 	EndGlobalSection
 EndGlobal

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OOP_3_Interface
+namespace HamburgerProject
 {
     internal static class Program
     {

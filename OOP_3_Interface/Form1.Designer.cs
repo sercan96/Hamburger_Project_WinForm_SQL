@@ -1,4 +1,4 @@
-﻿namespace OOP_3_Interface
+﻿namespace HamburgerProject
 {
     partial class Form1
     {

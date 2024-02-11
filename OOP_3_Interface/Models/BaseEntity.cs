@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_3_Interface.Models
+namespace HamburgerProject.Models
 {
     public abstract class BaseEntity
     {

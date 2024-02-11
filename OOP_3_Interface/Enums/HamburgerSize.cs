@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_3_Interface.Models
+namespace HamburgerProject.Enums
 {
-    public class Extra : BaseEntity
+    public enum HamburgerSize
     {
-   
+        Small,
+        Medium,
+        Big,
     }
 }

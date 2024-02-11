@@ -1,4 +1,4 @@
-﻿using OOP_3_Interface.Enums;
+﻿using HamburgerProject.Enums;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_3_Interface.Models
+namespace HamburgerProject.Models
 {
     public class OrderDetail : BaseEntity
     {

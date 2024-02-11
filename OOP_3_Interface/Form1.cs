@@ -1,5 +1,5 @@
-﻿using OOP_3_Interface.Enums;
-using OOP_3_Interface.Models;
+﻿using HamburgerProject.Enums;
+using HamburgerProject.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
-namespace OOP_3_Interface
+namespace HamburgerProject
 {
     public partial class Form1 : Form
     {

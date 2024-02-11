@@ -5,7 +5,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_3_Interface.Models
+namespace HamburgerProject.Models
 {
     public class HamburgerMenu : BaseEntity
     {

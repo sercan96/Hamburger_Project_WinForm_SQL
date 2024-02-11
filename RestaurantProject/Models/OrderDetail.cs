@@ -1,4 +1,5 @@
-﻿using RestaurantProject.Enums;
+﻿using RestaurantProject.Entity;
+using RestaurantProject.Enums;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

@@ -203,7 +203,7 @@
             this.ckbxMayonez.Name = "ckbxMayonez";
             this.ckbxMayonez.Size = new System.Drawing.Size(84, 20);
             this.ckbxMayonez.TabIndex = 5;
-            this.ckbxMayonez.Tag = "1.50";
+            this.ckbxMayonez.Tag = "1,50";
             this.ckbxMayonez.Text = "Mayonez";
             this.ckbxMayonez.UseVisualStyleBackColor = true;
             // 
@@ -214,7 +214,7 @@
             this.ckbxAcıSos.Name = "ckbxAcıSos";
             this.ckbxAcıSos.Size = new System.Drawing.Size(75, 20);
             this.ckbxAcıSos.TabIndex = 5;
-            this.ckbxAcıSos.Tag = "1.75";
+            this.ckbxAcıSos.Tag = "1,75";
             this.ckbxAcıSos.Text = "Acı Sos";
             this.ckbxAcıSos.UseVisualStyleBackColor = true;
             // 
@@ -231,8 +231,9 @@
             // 
             // lstOrders
             // 
+            this.lstOrders.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstOrders.FormattingEnabled = true;
-            this.lstOrders.ItemHeight = 16;
+            this.lstOrders.ItemHeight = 24;
             this.lstOrders.Location = new System.Drawing.Point(565, 52);
             this.lstOrders.Name = "lstOrders";
             this.lstOrders.Size = new System.Drawing.Size(926, 436);
@@ -285,7 +286,7 @@
             this.lblDecription.Size = new System.Drawing.Size(442, 139);
             this.lblDecription.TabIndex = 9;
             // 
-            // Form1
+            // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,7 +304,7 @@
             this.Controls.Add(this.cbxMenus);
             this.Controls.Add(this.lblMenus);
             this.Controls.Add(this.txtName);
-            this.Name = "Form1";
+            this.Name = "OrderForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxExtras.ResumeLayout(false);

@@ -1,6 +1,5 @@
 ﻿using RestaurantProject;
 using RestaurantProject.Models;
-using OOP_3_Interface.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RestaurantProject.Entity;
+using System.Security.Cryptography;
+using System.Data.Entity;
+using System.Xml.Linq;
 
 namespace OOP_3_Interface
 {
@@ -22,27 +25,27 @@ namespace OOP_3_Interface
 
         private void NewMenuForm_Load(object sender, EventArgs e)
         {
-            GetListOfMenu();
+            GetDefaultMenus();
         }
-        RestaurantDbContext _db;
-        void GetListOfMenu()
+        void GetDefaultMenus()
         {
-            using (_db = new RestaurantDbContext())
+            var db = DBTool.RestaurantMenuContext;
+            // Check if there is a hamburger menu in the database
+            if (!db.Products.Any())
             {
-                // Check if there is a hamburger menu in the database
-                if (!_db.Products.Any())
-                {
-                    // If there are no hamburger menus in the database, default menus are added
-                    List<Category> defaultCategories =  AddDefaultCategory();
-                    List<Product> defaultMenus = AddDefaultProducts();
-                    _db.Products.AddRange(defaultMenus);
-                    _db.Categories.AddRange(defaultCategories);
-                    _db.SaveChanges();
-                }
+                // If there are no hamburger menus in the database, default menus are added
+                List<Category> defaultCategories = AddDefaultCategory();
+                List<Product> defaultMenus = AddDefaultProducts();
+                db.Products.AddRange(defaultMenus);
+                db.Categories.AddRange(defaultCategories);
+                db.SaveChanges();
+            }
 
-                // Load hamburger menus into DataGridView
-                dgwMenuList.DataSource = _db.Products.ToList();
-            }      
+            // Load hamburger menus into DataGridView
+            dgwMenuList.DataSource = db.Products.ToList();
+
+            cmbCategories.DataSource = db.Categories.ToList();
+            cmbCategoryList.DataSource = db.Categories.ToList();
         }
 
         List<Category> AddDefaultCategory()
@@ -79,32 +82,48 @@ namespace OOP_3_Interface
 
         private void btnAddNewMenu_Click(object sender, EventArgs e)
         {
-            if (!CheckMenuInfo("Fill In The Remaining Information"))
+            if (!CheckMenuInfo(grbAddProduct,"Fill In The Remaining Information"))
                 return;
 
-            using (_db = new RestaurantDbContext())
-            {
-                Product hamburgerMenu = new Product(txtMenuName.Text, Convert.ToDecimal(txtMenuPrice.Text), txtMenuDesc.Text);
-                _db.Products.Add(hamburgerMenu);
-                _db.SaveChanges();
-            }
+            ListProductByCategory();
 
             MessageBox.Show("Added new Menu");
 
 
         }
 
-        private bool CheckMenuInfo(string info)
+        void ListProductByCategory()
         {
-            foreach (var item in Controls)
+            Category c = cmbCategories.SelectedItem as Category;
+            var db = DBTool.RestaurantMenuContext;
+            // Add the product directly
+
+            Product product = new Product(txtProductName.Text, Convert.ToDecimal(txtProductPrice.Text), txtMenuDesc.Text)
+            { CategoryId = c.Id };
+            db.Products.Add(product);
+            db.SaveChanges();
+
+            // Adding the Product via Category
+
+            Category category = new Category()
             {
-                if (item is TextBox)
+                Name = c.Name,
+                Description = c.Description,
+                Products = new List<Product> { new Product(txtProductName.Text, Convert.ToDecimal(txtProductPrice.Text), txtMenuDesc.Text) }
+            };
+            db.Categories.Add(category);
+            db.SaveChanges();
+        }
+
+        private bool CheckMenuInfo(GroupBox groupBox,string info)
+        {
+            var textBoxes = groupBox.Controls.OfType<TextBox>();
+            foreach (TextBox item in textBoxes)
+            {
+                if (string.IsNullOrEmpty(item.Text))
                 {
-                    if(item == null)
-                    {
-                        MessageBox.Show(info);
-                        return false;
-                    }
+                    MessageBox.Show(info);
+                    return false;
                 }
             }
             return true;
@@ -113,7 +132,66 @@ namespace OOP_3_Interface
 
         private void btnListMenus_Click(object sender, EventArgs e)
         {
-            GetListOfMenu();
+            dgwMenuList.DataSource = DBTool.RestaurantMenuContext.Products.ToList();
+        }
+
+        private void btnListCategoryMenu_Click(object sender, EventArgs e)
+        {
+            dgwMenuList.DataSource = DBTool.RestaurantMenuContext.Categories.ToList();
+
+        }
+
+        private void btnAddNewCategory_Click(object sender, EventArgs e)
+        {
+            if (!CheckMenuInfo(grbAddCategory, "Fill In The Remaining Information"))
+                return;
+
+            AddNewCategory();
+        }
+
+        private void AddNewCategory()
+        {
+            var db = DBTool.RestaurantMenuContext;
+            Category c = new Category()
+            {
+                Name = txtCategoryName.Text,
+                Description = txtCategoryDesc.Text
+            };
+
+            db.Categories.Add(c);
+            db.SaveChanges();
+
+            cmbCategories.Items.Add(c);
+            cmbCategoryList.Items.Add(c);
+            MessageBox.Show($"New Category Added ({c.Name})");
+        }
+
+        private void btnListProductByCategory_Click(object sender, EventArgs e)
+        {
+            Category category = cmbCategoryList.SelectedItem as Category;
+            dgwMenuList.DataSource = DBTool.RestaurantMenuContext.Products.Where(p => p.CategoryId == category.Id).ToList();
+        }
+
+        private void btnProdutctById_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtProductId.Text);
+            Product product = DBTool.RestaurantMenuContext.Products.Include(p => p.Category).FirstOrDefault(p => p.Id == id);
+
+            List<Product> productList = new List<Product>();
+            productList.Add(product);
+            dgwMenuList.DataSource = productList;
+
+            /*
+             *  Navigation Property :
+             *  
+             *  Pricable(Ana), nesnesindeki listeden oluşan nesnelerin navigation propertyleri null olacaktır. Fakat  ".Include(p=>           p.Category)" FirstOrDefault metodu, belirli bir productId ile eşleşen ürünü alırken aynı sorguda ilgili Category nesnesini   de yükleyecektir. Böylece, dönen Product nesnesi, ilişkili Category nesnesine de erişilebilir olacaktır.
+             *  
+             *  Dependent(Bağımlı), nesneden navigation Property id tanımlandığında otomatik olarak o id ile nesne ilişkilendirilir ve       navigation property otomaik doldurulur.
+             *  
+            */
+
+
+
         }
     }
 }

@@ -1,14 +1,13 @@
-﻿using OOP_3_Interface.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantProject.Models
+namespace RestaurantProject.Entity
 {
-    public class Product 
+    public class Product : IEntity 
     {
         public int Id { get; set; }
         public string Name { get; set; }

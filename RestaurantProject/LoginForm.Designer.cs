@@ -37,11 +37,12 @@
             // btnOrder
             // 
             this.btnOrder.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnOrder.Location = new System.Drawing.Point(98, 223);
+            this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnOrder.Location = new System.Drawing.Point(60, 223);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(118, 42);
+            this.btnOrder.Size = new System.Drawing.Size(198, 42);
             this.btnOrder.TabIndex = 0;
-            this.btnOrder.Text = "ORDER";
+            this.btnOrder.Text = "CUSTOMER LOGIN";
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
@@ -52,7 +53,7 @@
             this.AddNewMenu.Name = "AddNewMenu";
             this.AddNewMenu.Size = new System.Drawing.Size(198, 48);
             this.AddNewMenu.TabIndex = 0;
-            this.AddNewMenu.Text = "ADD NEW MENU";
+            this.AddNewMenu.Text = "ADMIN LOGIN";
             this.AddNewMenu.UseVisualStyleBackColor = false;
             this.AddNewMenu.Click += new System.EventHandler(this.AddNewMenu_Click);
             // 

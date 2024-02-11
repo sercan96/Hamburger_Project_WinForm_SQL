@@ -1,6 +1,5 @@
 ﻿using RestaurantProject.Enums;
 using RestaurantProject.Models;
-using OOP_3_Interface.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using RestaurantProject.Entity;
 
 namespace RestaurantProject
 {
@@ -22,7 +22,7 @@ namespace RestaurantProject
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (var db = DBTool.HamburgerMenuContext)
+            using (var db = new RestaurantDbContext())
             {
                 foreach (Product item in db.Products)
                 {

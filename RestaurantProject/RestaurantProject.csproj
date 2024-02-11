@@ -57,13 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DesignPattern\SingletonPattern\DBTool.cs" />
+    <Compile Include="Entity\IEntity.cs" />
     <Compile Include="Enums\HamburgerSize.cs" />
     <Compile Include="Migrations\202402111749477_mig_1.cs" />
     <Compile Include="Migrations\202402111749477_mig_1.designer.cs">
       <DependentUpon>202402111749477_mig_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Category.cs" />
+    <Compile Include="Entity\Category.cs" />
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +79,7 @@
     </Compile>
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Extra.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Entity\Product.cs" />
     <Compile Include="Models\RestaurantDbContext.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="NewMenuForm.cs">

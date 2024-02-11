@@ -1,5 +1,4 @@
-﻿using OOP_3_Interface.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +10,23 @@ namespace RestaurantProject.Models
     {
         public DBTool()
         { }
+        // _lock nesnesi, çoklu iş parçacığı ortamlarında güvenliği sağlamak için kullanılır.
+        private static readonly object _lock = new object();
 
         private static RestaurantDbContext _db;
 
-        public static RestaurantDbContext HamburgerMenuContext { 
+        public static RestaurantDbContext RestaurantMenuContext {
             get
             {
-                if (_db == null) _db = new RestaurantDbContext();
-                return _db;
-            } 
+                lock (_lock)
+                {
+                    if (_db == null)
+                    {
+                        _db = new RestaurantDbContext();
+                    }
+                    return _db;
+                }
+            }
         }
          
 

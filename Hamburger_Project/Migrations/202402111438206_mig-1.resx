@@ -117,8 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="burger-king-menu-fiyat-listesi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\burger-king-menu-fiyat-listesi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAM1X227jNhB9L9B/EPjUAlkzl5dtIO8itZM26Do2Vtl9XdDS2GFLUipJBfa39aGf1F/o0LpTcmyn7aIIEMjUzJn7GeqvP/4M32+kCJ5BG56qMbkYnZMAVJwmXK3HJLerN2/J+3fffhPeJnITfK7krpwcaiozJk/WZteUmvgJJDMjyWOdmnRlR3EqKUtSenl+/gO9uKCAEASxgiD8mCvLJex+4M9JqmLIbM7ELE1AmPIc30Q71OCBSTAZi2FM5vPFl6sv98qCXuHBqNAgwY3gDL2JQKxIwJRKLbPo6/UnA5HVqVpHGR4w8bjNAOVWTBgoY7huxI8N5/zShUMbxQoqzo1N5YmAF1dlfqiv/qoskzp/mMFbzLTduqh3WRyTn5lc5noNegYqJ4Fv8XoitJNuCS50+ivEtkz1qANwFngFOau7BJvJ/Z0Fk1zYXMNYQW41E2fBIl8KHv8C28f0N1BjlQvR9hm9xnedAzxCLzLQdvsRVmUk9wkJaFeP+oq1WkunCA89vrokwQMaZ0sBdUu0UhHZVMNPoEAzC8mCWYxROQzYJbVn3bM1BRNrnhV1LIxiK+JkkWDGNh9Are3TmOAjCe74BpLqpHTkk+I4iKhkdQ6HbLn//7mRheZxbWUKMZdMkGCh8ankj7ckiGLmsjmU2jZ6SJvO7PcrMoJlHBM/1LTuJWzsQO/isJfta8qIuvEU4BHYIVgkkcalgklG3rAMBVC72rAWLWiroje6h9/CGcsyrFSL78qTICrIbvImOp0BZIFBYzNABLW3tSXscbYG7y2aRk/vuDZ2yixbMle+SSJ7YoOF2ZP0yuRg7v1xb0pRqbnnQnV4B3jF8gCb5N5hvBIneBc61N75zNjT360jJpgeoJRJKnKp9tHSS9odkmjDdF4cj1cQQRuoODkeoZzyNkR51McIqZdUv4y0V0ePsP3ueGnCfJHaej1p3kSFZXcfvlb02r0QceyWPvPEtXq0NRbkyAmMot/FRHCMtxGYMcVXYGyx0whu9UvvVvL/uSFQYxJxyjXhq29n7lJ7cP++uGGOWsjqmen4ienvJNt83wY8den+I6DOYk2+5mLt0/wJG/PwwiymCGNaphhe4bO/dF+5VPujHdL2d0WI1ebrBsJ9ZSi8xmI+G9BK5l6t0qomGGzbo0rEK9kMLEswZzfaclxCFl/HYMzu4vWZiRxFbuUSkns1z22W2xtjQC5F59IY0pft724OXZ/D+a59zb8RArrJMQSYqx9zLpLa77uBptoD4dqnHFD0Ci+eCLfe1kgPqToSqEzfFDJQbrwfQWYCwcxcRewZXuMbXgY/wJrF24qh94McLkQ37eGUs7Vm0pQYjb77VqbuY/nd303deM1eDwAA</value>
+  </data>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

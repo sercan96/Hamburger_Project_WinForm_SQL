@@ -9,8 +9,16 @@ namespace HamburgerProject.Models
 {
     public class HamburgerMenu : BaseEntity
     {
+        public int Id { get; set; }
         public string Description { get; set; }
 
+        /// <summary> Entity-CTOR
+        /// Entity Framework, sınıfları veritabanından veri çekerken parametreli bir yapılandırıcı kullanmaz. Veritabanından veri çekerken,     varsayılan (parametresiz) bir yapılandırıcı bekler.
+        /// </summary>
+        public HamburgerMenu() 
+        {
+
+        }
         public HamburgerMenu(string name, decimal price, string description)
         {
             Name = name;         

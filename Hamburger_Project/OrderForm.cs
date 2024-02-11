@@ -1,5 +1,7 @@
 ﻿using HamburgerProject.Enums;
 using HamburgerProject.Models;
+using OOP_3_Interface.DesignPattern.SingletonPattern;
+using OOP_3_Interface.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,27 +15,22 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace HamburgerProject
 {
-    public partial class Form1 : Form
+    public partial class OrderForm : Form
     {
-        public Form1()
+        public OrderForm()
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<HamburgerMenu> hamburgerMenus = new List<HamburgerMenu>()
+            using (var db = DBTool.HamburgerMenuContext)
             {
-                new HamburgerMenu("Texas Steakhouse",140,"A great fried delicacy from the gourmet menu"),
-                new HamburgerMenu("Barbeku Brioche",190, "Are you ready a barbeque hot of Mexico"),
-                new HamburgerMenu("Crispy Chicken", 170,"Chickens have never been this crispy"),
-                new HamburgerMenu("SteakHouse", 210,"You will like it so much that you will want more"),
-            };
-
-            foreach (HamburgerMenu item in hamburgerMenus)
-            {
-                cbxMenus.Items.Add(item);
+                foreach (HamburgerMenu item in db.HamburgerMenus)
+                {
+                    cbxMenus.Items.Add(item);
+                }
             }
+           
         }
 
         private void MenuSelectedChanged(object sender, EventArgs e)

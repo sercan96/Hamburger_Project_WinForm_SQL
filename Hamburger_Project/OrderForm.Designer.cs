@@ -1,6 +1,6 @@
 ﻿namespace HamburgerProject
 {
-    partial class Form1
+    partial class OrderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -262,7 +262,7 @@
             // 
             // countHamburger
             // 
-            this.countHamburger.Location = new System.Drawing.Point(410, 80);
+            this.countHamburger.Location = new System.Drawing.Point(410, 52);
             this.countHamburger.Minimum = new decimal(new int[] {
             1,
             0,
